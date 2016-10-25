@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ats-tj-N3i">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--支付提示-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdU-7M-Qbm">
+                                <color key="backgroundColor" red="1" green="0.36973636139999999" blue="0.2885216686" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="RbS-xn-kzG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="支付中"/>
+                                <connections>
+                                    <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="65S-f7-2aq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYM-Cd-6h1">
+                                <color key="backgroundColor" red="0.1806486138" green="0.80460696050000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="IrW-Rg-jAi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="支付成功"/>
+                                <connections>
+                                    <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fhH-7g-gGX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tT-oe-tOF">
+                                <color key="backgroundColor" red="1" green="0.15962091042808302" blue="0.81605357539395085" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="a2L-ai-HmE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="支付失败"/>
+                                <connections>
+                                    <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BQe-WW-tcm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.代码简洁2.扩展性强3.注释易懂" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUN-Vd-AwU">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="RY6-0e-AFM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liszt邀请您加入iOS高级研发群:98787555" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fS-6A-LFq">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="kJT-PA-Pza"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VUN-Vd-AwU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="089-ky-kCM"/>
+                            <constraint firstItem="bdU-7M-Qbm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="BBB-10-O6d"/>
+                            <constraint firstAttribute="trailing" secondItem="3tT-oe-tOF" secondAttribute="trailing" constant="10" id="DDn-i9-ATK"/>
+                            <constraint firstItem="bdU-7M-Qbm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="GId-sX-e4d"/>
+                            <constraint firstItem="3tT-oe-tOF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="Ih4-AU-ceX"/>
+                            <constraint firstItem="3tT-oe-tOF" firstAttribute="top" secondItem="YYM-Cd-6h1" secondAttribute="bottom" constant="10" id="KzH-jc-cwG"/>
+                            <constraint firstItem="YYM-Cd-6h1" firstAttribute="top" secondItem="bdU-7M-Qbm" secondAttribute="bottom" constant="10" id="L7R-9x-tNG"/>
+                            <constraint firstAttribute="trailing" secondItem="4fS-6A-LFq" secondAttribute="trailing" constant="15" id="Xut-47-U03"/>
+                            <constraint firstAttribute="trailing" secondItem="YYM-Cd-6h1" secondAttribute="trailing" constant="10" id="Y7q-pb-9qU"/>
+                            <constraint firstItem="4fS-6A-LFq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="Yfo-j7-joG"/>
+                            <constraint firstAttribute="trailing" secondItem="VUN-Vd-AwU" secondAttribute="trailing" constant="15" id="gvp-E8-SkJ"/>
+                            <constraint firstItem="VUN-Vd-AwU" firstAttribute="top" secondItem="4fS-6A-LFq" secondAttribute="bottom" constant="20" id="hZg-RR-3vT"/>
+                            <constraint firstAttribute="trailing" secondItem="bdU-7M-Qbm" secondAttribute="trailing" constant="10" id="olU-Zz-Jov"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VUN-Vd-AwU" secondAttribute="bottom" constant="20" id="pTB-Zi-hye"/>
+                            <constraint firstItem="VUN-Vd-AwU" firstAttribute="top" secondItem="4fS-6A-LFq" secondAttribute="bottom" constant="20" id="w9p-2P-8YC"/>
+                            <constraint firstItem="YYM-Cd-6h1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="x15-b6-FW2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="支付提示" id="Rxe-j5-w33"/>
+                    <connections>
+                        <outlet property="desLabel" destination="VUN-Vd-AwU" id="UpB-na-uof"/>
+                        <outlet property="titleLable" destination="4fS-6A-LFq" id="rmV-jW-szC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048.8" y="-0.44977511244377816"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ot3-Ql-Czs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ats-tj-N3i" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TMh-9Z-u9k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="c7J-mm-2g8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WvW-9O-nvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="109.59999999999999" y="-0.44977511244377816"/>
+        </scene>
+    </scenes>
+</document>
