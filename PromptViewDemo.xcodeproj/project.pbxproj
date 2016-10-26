@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF3A64DB1DC080B100E5459B /* PromptHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptHeader.pch; sourceTree = "<group>"; };
 		FF8A4DD01DBEF13700763DE9 /* PromptViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PromptViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8A4DD41DBEF13700763DE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FF8A4DD61DBEF13700763DE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -159,6 +160,7 @@
 				FF8A4E121DBF0F6000763DE9 /* PromptItemView */,
 				FF8A4E071DBEF15A00763DE9 /* PromptView.h */,
 				FF8A4E081DBEF15A00763DE9 /* PromptView.m */,
+				FF3A64DB1DC080B100E5459B /* PromptHeader.pch */,
 			);
 			path = PromptView;
 			sourceTree = "<group>";

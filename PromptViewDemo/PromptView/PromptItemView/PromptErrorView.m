@@ -7,9 +7,8 @@
 //
 
 #import "PromptErrorView.h"
+#import "PromptHeader.pch"
 
-NSInteger const Simble_SIZE = 55;
-#define Prompt_Line_Width 3
 
 @interface PromptErrorView()
 /** 层背景View*/
@@ -32,18 +31,18 @@ NSInteger const Simble_SIZE = 55;
 }
 
 - (void)drawError{
-    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(Simble_SIZE/2, Simble_SIZE/2) radius:Simble_SIZE/2 startAngle:0 endAngle:M_PI*2 clockwise:YES];
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(Item_Width/2, Item_Width/2) radius:Item_Width/2 startAngle:0 endAngle:M_PI*2 clockwise:YES];
     
-    CGPoint p1 =  CGPointMake(Simble_SIZE/4, Simble_SIZE/4);
+    CGPoint p1 =  CGPointMake(Item_Width/4, Item_Width/4);
     [path moveToPoint:p1];
     
-    CGPoint p2 =  CGPointMake(Simble_SIZE/4*3, Simble_SIZE/4*3);
+    CGPoint p2 =  CGPointMake(Item_Width/4*3, Item_Width/4*3);
     [path addLineToPoint:p2];
     
-    CGPoint p3 =  CGPointMake(Simble_SIZE/4*3, Simble_SIZE/4);
+    CGPoint p3 =  CGPointMake(Item_Width/4*3, Item_Width/4);
     [path moveToPoint:p3];
     
-    CGPoint p4 =  CGPointMake(Simble_SIZE/4, Simble_SIZE/4*3);
+    CGPoint p4 =  CGPointMake(Item_Width/4, Item_Width/4*3);
     [path addLineToPoint:p4];
     
     CAShapeLayer *layer = [[CAShapeLayer alloc] init];
@@ -65,7 +64,7 @@ NSInteger const Simble_SIZE = 55;
 #pragma  mark -  懒加载
 - (UIView *)successLayerBgView{
     if(!_successLayerBgView){
-        _successLayerBgView = [[UIView alloc] initWithFrame:CGRectMake((self.frame.size.width-Simble_SIZE)/2, (self.frame.size.height - Simble_SIZE)/2, Simble_SIZE, Simble_SIZE)];
+        _successLayerBgView = [[UIView alloc] initWithFrame:CGRectMake((self.frame.size.width-Item_Width)/2, (self.frame.size.height - Item_Width)/2, Item_Width, Item_Width)];
     }
     return _successLayerBgView;
 }

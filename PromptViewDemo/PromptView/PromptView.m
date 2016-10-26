@@ -10,8 +10,8 @@
 #import "PromptIndicatorView.h"
 #import "PromptErrorView.h"
 #import "PromptSuccessView.h"
+#import "PromptHeader.pch"
 
-#define proWidth [UIScreen mainScreen].bounds.size.width / 375
 #define Self_Tag 99325
 
 @interface PromptView()
@@ -23,6 +23,8 @@
 @property (strong, nonatomic) UIView *customView;
 /** block回调*/
 @property (copy, nonatomic) PromptCompletionBlock completionBlock;
+/** offset_y*/
+@property (assign, nonatomic) CGFloat offset_y;
 @end
 
 @implementation PromptView
@@ -53,6 +55,7 @@
         /** 显示完成 可做代理回调*/
     }];
 }
+
 - (void)dismiss{
     [self removeFromSuperview];
     self.customView = nil;
@@ -61,11 +64,18 @@
     }
 }
 
+- (void)setOffset_y:(CGFloat)offset_y{
+    _offset_y = offset_y;
+    
+    CGRect tempFrame = self.contentView.frame;
+    tempFrame.origin.y = tempFrame.origin.y + offset_y;
+    self.contentView.frame = tempFrame;
+}
+
 #pragma mark - 懒加载
 - (UILabel *)titleLabel{
     if(!_titleLabel){
         _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(5, self.contentView.frame.size.height - 10 - proWidth * 20, self.contentView.frame.size.width - 10, proWidth * 20)];
-        _titleLabel.text = @"支付成功";
         _titleLabel.font = [UIFont systemFontOfSize:15.f];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -75,7 +85,7 @@
     if(!_contentView){
         _contentView = [[UIView alloc]initWithFrame:CGRectMake((self.frame.size.width - proWidth * 120)/2, (self.frame.size.height - proWidth * 120)/2, proWidth * 120, proWidth * 120)];
         _contentView.backgroundColor = [UIColor whiteColor];
-        _contentView.layer.cornerRadius = 5;
+        _contentView.layer.cornerRadius = 8;
         _contentView.layer.masksToBounds = YES;
     }
     return _contentView;
@@ -140,11 +150,12 @@
 +(void)showInView:(UIView *)inView content:(NSString *)content customView:(UIView *)customView duration:(NSTimeInterval)duration completion:(PromptCompletionBlock)completionBlock{
     PromptView *prompt = [[PromptView alloc] initWithFrame:inView.bounds];
     prompt.titleLabel.text = content;
+    prompt.offset_y = -50;
     prompt.tag=Self_Tag;
     prompt.customView = customView;
     [inView addSubview:prompt];
     prompt.completionBlock = completionBlock;
-    if(duration>0.1f){
+    if(duration>0.f){
         [prompt performSelector:@selector(dismiss) withObject:nil afterDelay:duration];
     }
 }

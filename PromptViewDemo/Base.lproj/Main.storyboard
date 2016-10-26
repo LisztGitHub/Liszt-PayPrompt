@@ -51,7 +51,7 @@
                                     <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BQe-WW-tcm"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.代码简洁2.扩展性强3.注释易懂" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUN-Vd-AwU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.不能乱修改Frame 2.内置Layer大小可在对应的View中设置3.未做文本宽高自适应 4.直接调用PromptView的类方法即可" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUN-Vd-AwU">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="RY6-0e-AFM"/>
                                 </constraints>
@@ -67,6 +67,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wW-jj-hJf">
+                                <color key="backgroundColor" red="0.26959287064159976" green="1" blue="0.71747301965205779" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="Ea5-ZY-WcX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="一直加载"/>
+                                <connections>
+                                    <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WRE-Q0-oM5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -75,11 +86,14 @@
                             <constraint firstAttribute="trailing" secondItem="3tT-oe-tOF" secondAttribute="trailing" constant="10" id="DDn-i9-ATK"/>
                             <constraint firstItem="bdU-7M-Qbm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="GId-sX-e4d"/>
                             <constraint firstItem="3tT-oe-tOF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="Ih4-AU-ceX"/>
+                            <constraint firstItem="8wW-jj-hJf" firstAttribute="top" secondItem="3tT-oe-tOF" secondAttribute="bottom" constant="10" id="Ive-qL-mgv"/>
                             <constraint firstItem="3tT-oe-tOF" firstAttribute="top" secondItem="YYM-Cd-6h1" secondAttribute="bottom" constant="10" id="KzH-jc-cwG"/>
                             <constraint firstItem="YYM-Cd-6h1" firstAttribute="top" secondItem="bdU-7M-Qbm" secondAttribute="bottom" constant="10" id="L7R-9x-tNG"/>
                             <constraint firstAttribute="trailing" secondItem="4fS-6A-LFq" secondAttribute="trailing" constant="15" id="Xut-47-U03"/>
                             <constraint firstAttribute="trailing" secondItem="YYM-Cd-6h1" secondAttribute="trailing" constant="10" id="Y7q-pb-9qU"/>
                             <constraint firstItem="4fS-6A-LFq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="Yfo-j7-joG"/>
+                            <constraint firstItem="8wW-jj-hJf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="dRf-D7-oNg"/>
+                            <constraint firstAttribute="trailing" secondItem="8wW-jj-hJf" secondAttribute="trailing" constant="10" id="gac-fs-HUl"/>
                             <constraint firstAttribute="trailing" secondItem="VUN-Vd-AwU" secondAttribute="trailing" constant="15" id="gvp-E8-SkJ"/>
                             <constraint firstItem="VUN-Vd-AwU" firstAttribute="top" secondItem="4fS-6A-LFq" secondAttribute="bottom" constant="20" id="hZg-RR-3vT"/>
                             <constraint firstAttribute="trailing" secondItem="bdU-7M-Qbm" secondAttribute="trailing" constant="10" id="olU-Zz-Jov"/>

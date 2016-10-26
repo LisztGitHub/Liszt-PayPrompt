@@ -7,9 +7,7 @@
 //
 
 #import "PromptSuccessView.h"
-
-#define Prompt_Line_Width 3
-#define Prompt_Width 55
+#import "PromptHeader.pch"
 
 @interface PromptSuccessView()
 /** 层背景View*/
@@ -32,16 +30,16 @@
 }
 
 - (void)drawSuccess{
-    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(Prompt_Width/2, Prompt_Width/2) radius:Prompt_Width/2 startAngle:0 endAngle:M_PI*2 clockwise:YES];
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(Item_Width/2, Item_Width/2) radius:Item_Width/2 startAngle:0 endAngle:M_PI*2 clockwise:YES];
     
     path.lineCapStyle = kCGLineCapRound;
     path.lineJoinStyle = kCGLineCapRound;
     
-    [path moveToPoint:CGPointMake(Prompt_Width/4, Prompt_Width/2)];
-    CGPoint p1 = CGPointMake(Prompt_Width/4+10, Prompt_Width/2+10);
+    [path moveToPoint:CGPointMake(Item_Width/4, Item_Width/2)];
+    CGPoint p1 = CGPointMake(Item_Width/4+10, Item_Width/2+10);
     [path addLineToPoint:p1];
     
-    CGPoint p2 = CGPointMake(Prompt_Width/4*3.5, Prompt_Width/3);
+    CGPoint p2 = CGPointMake(Item_Width/4*3.5, Item_Width/3);
     [path addLineToPoint:p2];
     
     CAShapeLayer *layer = [[CAShapeLayer alloc] init];
@@ -63,7 +61,7 @@
 #pragma  mark -  懒加载
 - (UIView *)successLayerBgView{
     if(!_successLayerBgView){
-        _successLayerBgView = [[UIView alloc] initWithFrame:CGRectMake((self.frame.size.width-Prompt_Width)/2, (self.frame.size.height - Prompt_Width)/2, Prompt_Width, Prompt_Width)];
+        _successLayerBgView = [[UIView alloc] initWithFrame:CGRectMake((self.frame.size.width-Item_Width)/2, (self.frame.size.height - Item_Width)/2, Item_Width, Item_Width)];
     }
     return _successLayerBgView;
 }

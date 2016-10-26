@@ -7,6 +7,7 @@
 //
 
 #import "PromptIndicatorView.h"
+#import "PromptHeader.pch"
 
 @interface PromptIndicatorView()
 /** 动画层*/
@@ -59,6 +60,7 @@
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     animation.fromValue = @1;
     animation.toValue = @0.1;
+    animation.removedOnCompletion = NO;
     animation.duration = 1.5;
     animation.repeatCount = CGFLOAT_MAX;
     
@@ -77,7 +79,7 @@
 
 #pragma mark - public funtion
 -(void)startAnimation{
-    [self configAnimationAtLayer:self.layer withTintColor:[UIColor colorWithRed:0/255.0 green:174/255.0 blue:259/255.0 alpha:1] size:CGSizeMake(55, 55)];
+    [self configAnimationAtLayer:self.layer withTintColor:[UIColor colorWithRed:0/255.0 green:174/255.0 blue:259/255.0 alpha:1] size:CGSizeMake(Item_Width, Item_Width)];
 }
 -(void)stopAnimation{
     [self.spotLayer removeAnimationForKey:@"animation"];
