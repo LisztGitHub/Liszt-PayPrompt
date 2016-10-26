@@ -21,6 +21,8 @@
 @property (strong, nonatomic) UILabel *titleLabel;
 /** customView*/
 @property (strong, nonatomic) UIView *customView;
+/** block回调*/
+@property (copy, nonatomic) PromptCompletionBlock completionBlock;
 @end
 
 @implementation PromptView
@@ -54,6 +56,9 @@
 - (void)dismiss{
     [self removeFromSuperview];
     self.customView = nil;
+    if(self.completionBlock){
+        self.completionBlock();
+    }
 }
 
 #pragma mark - 懒加载
@@ -92,7 +97,7 @@
 }
 
 +(void)showSuccessInView:(UIView *)inView content:(NSString *)content{
-    [self showSuccessInView:inView content:content duration:1.5f];
+    [self showSuccessInView:inView content:content duration:0.f];
 }
 +(void)showSuccessInView:(UIView *)inView content:(NSString *)content duration:(NSTimeInterval)duration{
     [self showSuccessInView:inView content:content duration:duration completion:nil];
@@ -103,7 +108,7 @@
 }
 
 + (void)showErrorInView:(UIView *)inView content:(NSString *)content{
-    [self showErrorInView:inView content:content duration:1.5f];
+    [self showErrorInView:inView content:content duration:0.f];
 }
 + (void)showErrorInView:(UIView *)inView content:(NSString *)content duration:(NSTimeInterval)duration{
     [self showErrorInView:inView content:content duration:duration completion:nil];
@@ -114,7 +119,7 @@
 }
 
 + (void)showIndeterminateWithInView:(UIView *)inView content:(NSString *)content{
-    [self showIndeterminateWithInView:inView content:content duration:1.5f];
+    [self showIndeterminateWithInView:inView content:content duration:0.f];
 }
 + (void)showIndeterminateWithInView:(UIView *)inView content:(NSString *)content duration:(NSTimeInterval)duration{
     [self showIndeterminateWithInView:inView content:content duration:duration completion:nil];
@@ -127,7 +132,7 @@
 }
 
 +(void)showInView:(UIView *)inView content:(NSString *)content customView:(UIView *)customView{
-    [self showInView:inView content:content customView:customView duration:1.5f];
+    [self showInView:inView content:content customView:customView duration:0.f];
 }
 +(void)showInView:(UIView *)inView content:(NSString *)content customView:(UIView *)customView duration:(NSTimeInterval)duration{
     [self showInView:inView content:content customView:customView duration:duration completion:nil];
@@ -138,8 +143,10 @@
     prompt.tag=Self_Tag;
     prompt.customView = customView;
     [inView addSubview:prompt];
-    
-    [prompt performSelector:@selector(dismiss) withObject:nil afterDelay:duration];
+    prompt.completionBlock = completionBlock;
+    if(duration>0.1f){
+        [prompt performSelector:@selector(dismiss) withObject:nil afterDelay:duration];
+    }
 }
 
 @end

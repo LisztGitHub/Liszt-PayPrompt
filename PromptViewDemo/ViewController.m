@@ -36,13 +36,19 @@
 
 - (IBAction)buttonAction:(UIButton *)sender {
     if(sender.tag==11){
-        [PromptView showSuccessInView:self.navigationController.view content:@"支付成功" duration:2.f];
+        [PromptView showSuccessInView:self.navigationController.view content:@"支付成功成功" duration:2.0f completion:^{
+            NSLog(@"回调");
+        }];
     }
     else if(sender.tag==10){
-        [PromptView showIndeterminateWithInView:self.navigationController.view content:@"支付中..." duration:2.0f];
+        [PromptView showIndeterminateWithInView:self.navigationController.view content:@"支付中..." duration:2.0f completion:^{
+            NSLog(@"回调");
+        }];
     }
     else{
-        [PromptView showErrorInView:self.navigationController.view content:@"支付失败" duration:2.0f];
+        [PromptView showErrorInView:self.navigationController.view content:@"支付失败" duration:2.0f completion:^{
+            NSLog(@"回调");
+        }];
     }
 }
 

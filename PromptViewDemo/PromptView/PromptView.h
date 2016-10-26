@@ -49,7 +49,7 @@ typedef void (^PromptCompletionBlock)();
 + (void)showInView:(UIView *)inView content:(NSString *)content customView:(UIView *)customView;
 + (void)showInView:(UIView *)inView content:(NSString *)content customView:(UIView *)customView duration:(NSTimeInterval)duration;
 /**
- *  加载中
+ *  自定义视图
  *  @param inView 需要加载的View  建议(self.navigationController.view||self.view)
  *  @param duration 停留的时间
  *  @param completionBlock 加载完成回调
